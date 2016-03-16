@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Bram Poldervaart" />
+  <meta name="date" content="2016-03-15" />
+  <title>Generational Economics - Assignment 2</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="style.css" type="text/css" />
+  <script type="text/javascript">/*<![CDATA[*/
+  /*
+  March 19, 2004 MathHTML (c) Peter Jipsen http://www.chapman.edu/~jipsen
+  Released under the GNU General Public License version 2 or later.
+  See the GNU General Public License (at http://www.gnu.org/copyleft/gpl.html)
+  for more details.
+  */
+  
+  function convertMath(node) {// for Gecko
+    if (node.nodeType==1) {
+      var newnode =
+        document.createElementNS("http://www.w3.org/1998/Math/MathML",
+          node.nodeName.toLowerCase());
+      for(var i=0; i < node.attributes.length; i++)
+        newnode.setAttribute(node.attributes[i].nodeName,
+          node.attributes[i].value);
+      for (var i=0; i<node.childNodes.length; i++) {
+        var st = node.childNodes[i].nodeValue;
+        if (st==null || st.slice(0,1)!=" " && st.slice(0,1)!="\n")
+          newnode.appendChild(convertMath(node.childNodes[i]));
+      }
+      return newnode;
+    }
+    else return node;
+  }
+  
+  function convert() {
+    var mmlnode = document.getElementsByTagName("math");
+    var st,str,node,newnode;
+    for (var i=0; i<mmlnode.length; i++)
+      if (document.createElementNS!=null)
+        mmlnode[i].parentNode.replaceChild(convertMath(mmlnode[i]),mmlnode[i]);
+      else { // convert for IE
+        str = "";
+        node = mmlnode[i];
+        while (node.nodeName!="/MATH") {
+          st = node.nodeName.toLowerCase();
+          if (st=="#text") str += node.nodeValue;
+          else {
+            str += (st.slice(0,1)=="/" ? "</m:"+st.slice(1) : "<m:"+st);
+            if (st.slice(0,1)!="/")
+               for(var j=0; j < node.attributes.length; j++)
+                 if (node.attributes[j].value!="italic" &&
+                   node.attributes[j].value!="" &&
+                   node.attributes[j].value!="inherit" &&
+                   node.attributes[j].value!=undefined)
+                   str += " "+node.attributes[j].nodeName+"="+
+                       "\""+node.attributes[j].value+"\"";
+            str += ">";
+          }
+          node = node.nextSibling;
+          node.parentNode.removeChild(node.previousSibling);
+        }
+        str += "</m:math>";
+        newnode = document.createElement("span");
+        node.parentNode.replaceChild(newnode,node);
+        newnode.innerHTML = str;
+      }
+  }
+  
+  if (document.createElementNS==null) {
+    document.write("<object id=\"mathplayer\"\
+    classid=\"clsid:32F66A20-7614-11D4-BD11-00104BD3F987\"></object>");
+    document.write("<?import namespace=\"m\" implementation=\"#mathplayer\"?>");
+  }
+  if(typeof window.addEventListener != 'undefined'){
+    window.addEventListener('load', convert, false);
+  }
+  if(typeof window.attachEvent != 'undefined') {
+    window.attachEvent('onload', convert);
+  }
+  /*]]>*/
+  </script>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Generational Economics - Assignment 2</h1>
+<h2 class="author">Bram Poldervaart</h2>
+<h3 class="date">March 15, 2016</h3>
+</div>
+<hr />
+<h1 id="sec:ex1">Exercise 1</h1>
+<p>Assume a Diamond model as described in the reader where the consumer has preferences <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>t</mi></msub><mo>=</mo><msubsup><mi>c</mi><mi>t</mi><mi>y</mi></msubsup><mo>*</mo><msubsup><mi>c</mi><mi>t</mi><mi>o</mi></msubsup><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">U_t = c^y_t*c^o_t+1</annotation></semantics></math>, there is no technological progress and production is described by <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mi>t</mi></msub><mo>=</mo><msup><mi>k</mi><mi>α</mi></msup></mrow><annotation encoding="application/x-tex">y_t = k^\alpha</annotation></semantics></math>.<br />
+<br />
+i. Compute the capital-labour ratio in the steady state. What is the effect of an increase in <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> on the steady-state capital-labour ratio?<br />
+(1,0)<span>300</span><br />
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right"><msub><mi>k</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mfrac><msub><mi>s</mi><mi>t</mi></msub><mrow><mn>1</mn><mo>+</mo><mi>g</mi></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="right"></mtd></mtr><mtr><mtd columnalign="right"><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>k</mi><mi>t</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>y</mi><mi>t</mi></msub><mo>=</mo><msubsup><mi>k</mi><mi>t</mi><mi>α</mi></msubsup><mstyle mathvariant="normal"><mi>a</mi><mi>n</mi><mi>d</mi></mstyle><mi>g</mi><mo>=</mo><mn>0</mn></mtd></mtr><mtr><mtd columnalign="right"></mtd></mtr><mtr><mtd columnalign="right"><msub><mi>k</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mo>+</mo><mi>p</mi></mrow></mfrac><mo stretchy="false" form="prefix">(</mo><msubsup><mi>k</mi><mi>t</mi><mi>α</mi></msubsup><mo>−</mo><msub><mi>k</mi><mi>t</mi></msub><mi>α</mi><msubsup><mi>k</mi><mi>t</mi><mrow><mi>α</mi><mo>−</mo><mn>1</mn></mrow></msubsup><mo stretchy="false" form="postfix">)</mo></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+k_{t+1}= \frac{s_t }{1+g}  \nonumber \\
+\nonumber \\ 
+f(k_t)=y_t = k^\alpha_t \mbox{ and } g=0 \nonumber \\
+\nonumber \\
+k_{t+1} = \frac {1}{2+p} (k^\alpha_t - k_t\alpha k_t^{\alpha-1}) \nonumber \end{aligned}</annotation></semantics></math></p>
+<p><em>To complete the steady state we use the difference equation: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>k</mi><mi>t</mi></msub><mo>=</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">k_{t+1} = k_t = k</annotation></semantics></math>.</em><br />
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right"><msub><mi>k</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>k</mi><mi>t</mi></msub><mo>=</mo><mfrac><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>α</mi><mo stretchy="false" form="postfix">)</mo><msubsup><mi>k</mi><mi>t</mi><mi>α</mi></msubsup></mrow><mrow><mn>2</mn><mo>+</mo><mi>p</mi></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="right"><msup><mi>k</mi><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow></msup><mo>=</mo><mfrac><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><mrow><mn>2</mn><mo>+</mo><mi>p</mi></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="right"><mi>k</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mfrac><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><mrow><mn>2</mn><mo>+</mo><mi>p</mi></mrow></mfrac><msup><mo stretchy="false" form="postfix">)</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow></mfrac></msup></mtd><mtd columnalign="left"><mstyle mathvariant="normal"><mi>i</mi><mi>s</mi><mi>t</mi><mi>h</mi><mi>e</mi><mi>s</mi><mi>t</mi><mi>e</mi><mi>a</mi><mi>d</mi><mi>y</mi><mi>s</mi><mi>t</mi><mi>a</mi><mi>t</mi><mi>e</mi><mo>.</mo></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+k_{t+1} = k_t = \frac {(1-\alpha)k_t^\alpha}{2+p} \nonumber \\
+k^{1-\alpha} = \frac{1-\alpha}{2+p} \nonumber \\
+k= (\frac{1-\alpha}{2+p})^\frac{1}{1-\alpha} \nonumber &amp; \mbox{ is the steady state.}\end{aligned}</annotation></semantics></math></p>
+<p><em>An increase in <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> will let k decrease and convert to 0. That means that in the steady state the capital-labour ration would move to an increase in labour relative to capital.</em><br />
+<br />
+<br />
+<br />
+ii. Suppose the government introduces a tax ? on interest income. All revenues of this tax are transferred to the elderly in the same period as a pension benefit. So the budget constraints become: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>c</mi><mi>t</mi><mi>y</mi></msubsup><mo>=</mo><mi>w</mi><mo>−</mo><msub><mi>s</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">c_t^y=w-s_t</annotation></semantics></math> <span class="math display">$$c_{t+1}^o = (1+(1-\varsigma)r)s_t+T$$</span> Note that the level of the pension benefit T is given for the individual and cannot be affected by saving more or less.<br />
+Derive the Euler equation.<br />
+<br />
+<br />
+<em>First, we write down the utility function and the production function:</em><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>t</mi></msub><mo>=</mo><msubsup><mi>C</mi><mi>t</mi><mi>y</mi></msubsup><msubsup><mi>C</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow><mi>o</mi></msubsup></mrow><annotation encoding="application/x-tex">U_t = C_t^yC_{t+1}^o</annotation></semantics></math><br />
+<br />
+<em>We combine this with the consumption function at t for the young and t+1 for old, we get:</em><br />
+<span class="math inline">$U_t = (w-s_t)((1+(1-\varsigma)r)s_t+T)$</span><br />
+<br />
+<em>If we derive this equation:</em></p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mo>∂</mo><mi>U</mi></mrow><mrow><mo>∂</mo><msub><mi>s</mi><mi>t</mi></msub></mrow></mfrac><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\frac{\partial U}{\partial s_t} = 0 </annotation></semantics></math><br />
+<span class="math inline">$\frac{\partial U}{\partial s_t} = w(1+(1-\varsigma)r) - 2s_t(1+(1-\varsigma)r) = 0$</span><br />
+<br />
+<span class="math inline">$s_t = \frac{w(1+(1-\varsigma)r)-T}{2(1+(1-\varsigma)r)} $</span><br />
+<br />
+<em>By substituting <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mi>t</mi></msub><annotation encoding="application/x-tex">s_t</annotation></semantics></math> in both <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>C</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow><mi>o</mi></msubsup><annotation encoding="application/x-tex">C_{t+1}^o</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>C</mi><mi>t</mi><mi>y</mi></msubsup><annotation encoding="application/x-tex">C_t^y</annotation></semantics></math>, we can derive the Euler Equation:</em><br />
+<span class="math inline">$\frac{C_{t+1}^o}{C_t^y} = \frac{w(1+(1-\varsigma)r)+T}{\frac{w(1+(1-\varsigma)r)}{1+(1-\varsigma)r}+T} =1+(1-\varsigma)r$</span></p>
+<h1 id="sec:ex2">Excersise 2</h1>
+<p>a. Assume that production is described by the following neoclassical production function without labour-augmenting technological progress: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mo>=</mo><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>K</mi><mo>,</mo><mi>L</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">Y = F (K, L)</annotation></semantics></math><br />
+Derive the dynamic equation for capital per person (k) assuming a constant savings rate.<br />
+<br />
+<em>Since <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Δ</mi><annotation encoding="application/x-tex">\Delta</annotation></semantics></math> is equal to difference between the savings and the effective depreciation and we assume there is no labour-augmenting technology (g=0), we find:</em><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Δ</mi><mi>k</mi><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><mi>Δ</mi><mi>K</mi><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mi>L</mi><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mo>−</mo><mfrac><mrow><mi>K</mi><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mi>L</mi><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mfrac><mrow><mi>Δ</mi><mi>L</mi><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mi>L</mi><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mo>=</mo><mfrac><mrow><mi>s</mi><mi>Y</mi><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>δ</mi><mi>K</mi><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mi>L</mi><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mo>−</mo><mi>K</mi><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">\Delta k(t) = \frac{\Delta K(t)}{L(t)} - \frac{K(t)}{L(t)} \frac{\Delta L(t)}{L(t)} 
+= \frac{sY(t)-\delta K(t)}{L(t)} - K(t)n</annotation></semantics></math><br />
+<br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Δ</mi><mi>k</mi><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>s</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>k</mi><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mo stretchy="false" form="prefix">(</mo><mi>δ</mi><mo>+</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo><mi>k</mi><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\Delta k(t) = sf(k(t)) - (\delta +n)k(t)</annotation></semantics></math><br />
+<br />
+<br />
+b. Assume a Solow-Swan model as described in the reader, with a Cobb-Douglas production function <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mo>=</mo><mn>1.5</mn><msup><mi>K</mi><mn>0.5</mn></msup><msup><mi>L</mi><mn>0.5</mn></msup></mrow><annotation encoding="application/x-tex">Y = 1.5K^{0.5}L^{0.5}</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">x = 0.5</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">n = 0.5</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>=</mo><mn>0.25</mn></mrow><annotation encoding="application/x-tex">\delta = 0.25</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">\sigma = 0.5</annotation></semantics></math>.<br />
+<br />
+i. Compute the capital-labour ration <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>k</mi><mo>*</mo></msup><annotation encoding="application/x-tex">k^*</annotation></semantics></math> in the steady state.<br />
+<br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>g</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>α</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1.5</mn><mo>*</mo><mn>1.5</mn><mo>=</mo><mn>2.25</mn><mo accent="false">⇔</mo><mi>g</mi><mo>=</mo><mn>1.25</mn></mrow><annotation encoding="application/x-tex">(1+g)=(1+n)(1+\alpha) = 1.5 * 1.5 = 2.25 \Leftrightarrow g=1.25</annotation></semantics></math><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>k</mi><mi>t</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>A</mi><msup><mi>K</mi><mn>0.5</mn></msup><msup><mi>L</mi><mrow><mo>−</mo><mn>0.5</mn></mrow></msup><mo>=</mo><mi>A</mi><msup><mi>k</mi><mn>0.5</mn></msup><mo>=</mo><mn>1.5</mn><msup><mi>k</mi><mn>0.5</mn></msup></mrow><annotation encoding="application/x-tex">f(k_t)=AK^{0.5}L^{-0.5} = Ak^{0.5} = 1.5k^{0.5}</annotation></semantics></math><br />
+<br />
+<em>The steady state can then by calculated:</em> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>δ</mi><mo>+</mo><mi>g</mi><mo stretchy="false" form="postfix">)</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">i = (\delta + g)k</annotation></semantics></math> where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>=</mo><mi>σ</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0.75</mn><msup><mi>k</mi><mn>0.5</mn></msup></mrow><annotation encoding="application/x-tex">i=\sigma f(k) = 0.75k^{0.5}</annotation></semantics></math> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.75</mn><msup><mi>k</mi><mn>0.5</mn></msup><mo>=</mo><mn>1.5</mn><mi>k</mi><mo accent="false">⇔</mo><msubsup><mi>k</mi><mrow><mi>s</mi><mi>s</mi></mrow><mo>*</mo></msubsup><mo>=</mo><mn>0.25</mn></mrow><annotation encoding="application/x-tex">0.75k^{0.5} = 1.5k \Leftrightarrow k_{ss}^*=0.25</annotation></semantics></math><br />
+<br />
+<br />
+ii. Is the steady state dynamically efficient or dynamically inefficient?<br />
+<br />
+<em>The Golden Rule (GR) can be derived using the following equation:</em><br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>′</mo><mo stretchy="false" form="prefix">(</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>δ</mi><mo>+</mo><mi>g</mi><mo accent="false">⇔</mo><mn>0.75</mn><msup><mi>k</mi><mrow><mo>−</mo><mn>0.5</mn></mrow></msup><mo>=</mo><mn>1.5</mn><mo accent="false">⇔</mo><msub><mi>k</mi><mrow><mi>G</mi><mi>R</mi></mrow></msub><mo>=</mo><mn>0.25</mn></mrow><annotation encoding="application/x-tex">f&#39;(k) = \delta +g \Leftrightarrow 0.75k^{-0.5}=1.5\Leftrightarrow k_{GR}=0.25</annotation></semantics></math><br />
+<br />
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mrow><mi>S</mi><mi>S</mi></mrow></msub><mo>=</mo><msub><mi>k</mi><mrow><mi>G</mi><mi>R</mi></mrow></msub><mo accent="false">⇒</mo></mrow><annotation encoding="application/x-tex">k_{SS}=k_{GR}\Rightarrow</annotation></semantics></math> <em>Neither dynamically efficient nor dynamically inefficient.</em></p>
+</body>
+</html>
