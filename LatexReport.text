@@ -1,0 +1,116 @@
+(1,0)<span>300</span>\
+\[2mm\]\
+\[2mm\] (1,0)<span>200</span>\
+\[1,5cm\] <span style="font-variant:small-caps;">Bram
+Poldervaart</span>\
+\[0.75cm\] <span style="font-variant:small-caps;">Assignment 2</span>\
+\[9cm\]
+
+<span style="font-variant:small-caps;">Bram Poldervaart\
+ANR\
+\# 785939\
+March 15, 2016\
+</span>
+
+Exercise 1 {#sec:ex1}
+==========
+
+Assume a Diamond model as described in the reader where the consumer has
+preferences $U_t = c^y_t*c^o_t+1$, there is no technological progress
+and production is described by $y_t = k^\alpha$.\
+\
+i. Compute the capital-labour ratio in the steady state. What is the
+effect of an increase in $\alpha$ on the steady-state capital-labour
+ratio?\
+(1,0)<span>400</span> $$\begin{aligned}
+k_{t+1}= \frac{s_t }{1+g}  \nonumber \\
+\nonumber \\ 
+f(k_t)=y_t = k^\alpha_t \mbox{ and } g=0 \nonumber \\
+\nonumber \\
+k_{t+1} = \frac {1}{2+p} (k^\alpha_t - k_t\alpha k_t^{\alpha-1}) \nonumber \end{aligned}$$
+
+*To complete the steady state we use the difference equation:
+$k_{t+1} = k_t = k$.*\
+$$\begin{aligned}
+k_{t+1} = k_t = \frac {(1-\alpha)k_t^\alpha}{2+p} \nonumber \\
+k^{1-\alpha} = \frac{1-\alpha}{2+p} \nonumber \\
+k= (\frac{1-\alpha}{2+p})^\frac{1}{1-\alpha} \mbox{ is the steady state.}\nonumber \end{aligned}$$
+*An increase in $\alpha$ will let k decrease and convert to 0. That
+means that in the steady state the capital-labour ration would move to
+an increase in labour relative to capital.*\
+(1,0)<span>400</span>\
+\
+\
+\
+\
+ii. Suppose the government introduces a tax ? on interest income. All
+revenues of this tax are transferred to the elderly in the same period
+as a pension benefit. So the budget constraints become:\
+$$c_t^y=w-s_t$$ $$c_{t+1}^o = (1+(1-\varsigma)r)s_t+T$$\
+Note that the level of the pension benefit T is given for the individual
+and cannot be affected by saving more or less.\
+Derive the Euler equation.\
+(1,0)<span>400</span>\
+*First, we write down the utility function and the production
+function:*\
+$U_t = C_t^yC_{t+1}^o$\
+\
+*We combine this with the consumption function at t for the young and
+t+1 for old, we get:*\
+$U_t = (w-s_t)((1+(1-\varsigma)r)s_t+T)$\
+\
+*If we derive this equation:*
+
+$\frac{\partial U}{\partial s_t} = 0 $\
+$\frac{\partial U}{\partial s_t} = w(1+(1-\varsigma)r) - 2s_t(1+(1-\varsigma)r) = 0$\
+\
+$s_t = \frac{w(1+(1-\varsigma)r)-T}{2(1+(1-\varsigma)r)} $\
+\
+*By substituting $s_t$ in both $C_{t+1}^o$ and $C_t^y$, we can derive
+the Euler Equation:*\
+$\frac{C_{t+1}^o}{C_t^y} = \frac{w(1+(1-\varsigma)r)+T}{\frac{w(1+(1-\varsigma)r)}{1+(1-\varsigma)r}+T} =1+(1-\varsigma)r$\
+(1,0)<span>400</span>\
+
+Excersise 2 {#sec:ex2}
+===========
+
+a\. Assume that production is described by the following neoclassical
+production function without labour-augmenting technological progress:
+$Y = F (K, L)$\
+Derive the dynamic equation for capital per person (k) assuming a
+constant savings rate.\
+(1,0)<span>400</span>\
+*Since $\Delta$ is equal to difference between the savings and the
+effective depreciation and we assume there is no labour-augmenting
+technology (g=0), we find:*\
+$\Delta k(t) = \frac{\Delta K(t)}{L(t)} - \frac{K(t)}{L(t)} \frac{\Delta L(t)}{L(t)} 
+= \frac{sY(t)-\delta K(t)}{L(t)} - K(t)n$\
+\
+$\Delta k(t) = sf(k(t)) - (\delta +n)k(t)$\
+(1,0)<span>400</span>\
+\
+\
+b. Assume a Solow-Swan model as described in the reader, with a
+Cobb-Douglas production function $Y = 1.5K^{0.5}L^{0.5}$ and $x = 0.5$,
+$n = 0.5$, $\delta = 0.25$, $\sigma = 0.5$.\
+\
+i. Compute the capital-labour ration $k^*$ in the steady state.\
+(1,0)<span>400</span>\
+$(1+g)=(1+n)(1+\alpha) = 1.5 * 1.5 = 2.25 \Leftrightarrow g=1.25$\
+$f(k_t)=AK^{0.5}L^{-0.5} = Ak^{0.5} = 1.5k^{0.5}$\
+\
+*The steady state can then by calculated:* $i = (\delta + g)k$ where
+$i=\sigma f(k) = 0.75k^{0.5}$
+$0.75k^{0.5} = 1.5k \Leftrightarrow k_{ss}^*=0.25$\
+(1,0)<span>400</span>\
+\
+\
+ii. Is this steady state dynamically efficient or dynamically
+inefficient?\
+(1,0)<span>400</span>\
+*The Golden Rule (GR) can be derived using the following equation:*\
+$f'(k) = \delta +g \Leftrightarrow 0.75k^{-0.5}=1.5\Leftrightarrow k_{GR}=0.25$\
+\
+$k_{SS}=k_{GR}\Rightarrow$ *Neither dynamically efficient nor
+dynamically inefficient.*\
+(1,0)<span>400</span>\
